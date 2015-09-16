@@ -32,32 +32,26 @@
 			$password_error = "See väli on kohustuslik";
 		} 
 			
-			
-			
-			
-		
-
-	}
+	//***************************************************************************		
+	    }elseif(isset($_POST["create"])){	
+			echo"vajutas create user nuppu!";	
 	
-	if($_SERVER["REQUEST_METHOD"] == "POST" ) {
-		
-		if (empty($_POST["e-mail"])){
+	
+			if (empty($_POST["e-mail"])){
 			$email_error = "See väli on kohustuslik";
-		}
-		if (empty($_POST["pass"]) ) {
-			$password_error = "See väli on kohustuslik";
-		} else {
-			
-			
-
-			if(strlen($_POST["pass"]) <8) {
-				$password_error = "Parool on liiga lühike, peab olema vähemalt 8 tähemärki pikk!";
 			}
+			if (empty($_POST["pass"]) ) {
+			$password_error = "See väli on kohustuslik";
+			} else {
+			
+				if(strlen($_POST["pass"]) <8) {
+				$password_error = "Parool on liiga lühike, peab olema vähemalt 8 tähemärki pikk!";
+				}
 	
-		}
-		if (empty ($_POST["name"])){
+			}
+			if (empty ($_POST["name"])){
 			$name_error = "See väli on kohustuslik";
-		}
+			}
 	}	
 ?>
 
@@ -76,7 +70,7 @@
 		
 	<h2>Create user</h2>
 		
-		<form action="create_user.php" method="post" >
+		<form action="login.php" method="post" >
 			<input name="e-mail" type="email" placeholder="e-mail" > <?php echo $email_error; ?> <br><br>
 			<input name="pass" type="password" placeholder="password" > <?php echo $password_error; ?> <br><br><br><br>
 			<input name="name" type="text" placeholder="first name" > <?php echo $name_error; ?> <br><br>
