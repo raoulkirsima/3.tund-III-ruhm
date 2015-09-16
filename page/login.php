@@ -1,5 +1,8 @@
+<?php	
+	$page_title="Sisselogimine";
+	$page_file_name="login.php";
+?>
 <?php require_once("../header.php"); ?>
-
 <?php
 
 	// LOGIN.PHP
@@ -76,8 +79,8 @@
 		<form action="create_user.php" method="post" >
 			<input name="e-mail" type="email" placeholder="e-mail" > <?php echo $email_error; ?> <br><br>
 			<input name="pass" type="password" placeholder="password" > <?php echo $password_error; ?> <br><br><br><br>
-			<input name="name" type="name" placeholder="first name" > <?php echo $name_error; ?> <br><br>
-			<input name="name" type="name" placeholder="last name" > <?php echo $name_error; ?> <br><br>
+			<input name="name" type="text" placeholder="first name" > <?php echo $name_error; ?> <br><br>
+			<input name="name" type="text" placeholder="last name" > <?php echo $name_error; ?> <br><br>
 			<input type="submit" value="Create user" >
 		</form>	
 			
